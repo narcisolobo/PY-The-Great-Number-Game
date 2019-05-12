@@ -1,0 +1,65 @@
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  body {
+    background-image: url("/static/img/numbers.jpg");
+    text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+    color: #000;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .game-container {
+    text-align: center;
+    border-radius: 20px;
+    background-color: white;
+    padding: 20px;
+    width: 500px;
+    margin: 100px auto auto;
+  }
+  
+  .button {
+    background-color: dodgerblue;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16pt;
+  }
+
+  input {
+    font-size: 12pt;
+    margin-left: 10px;
+  }
+
+  .wrong {
+    text-align: center;
+    border-radius: 20px;
+    background-color: crimson;
+    padding: 20px;
+    width: 200px;
+    margin: 20px auto;
+    font-size: 24pt;
+    color: white;
+  }
+
+  .right {
+    text-align: center;
+    border-radius: 20px;
+    background-color: yellowgreen;
+    padding: 20px;
+    width: 200px;
+    margin: 20px auto;
+    font-size: 24pt;
+    color: white;
+  }
+
+  img {
+    margin: 10px auto 20px;
+    width: 100px;
+  }

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Great Number Game</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="game-container" style="margin-top:100px">
+            <h1>The Great Number Game!</h1>
+            <h3>Your guess was {{human_guess}}.</h3>
+            {% if less_than == True and num_attempts <= 5 %}
+            <div class="wrong">TOO LOW!</div>
+            <form action="/guess" method="POST">
+                <p>Take another guess!<input type="text" name="human_guess" id="human_guess" size="8" maxlength="3"></p>
+                <button type="submit" class="button">Guess</button>
+            </form>
+            {% endif %}
+            {% if greater_than == True and num_attempts <= 5 %}
+            <div class="wrong">TOO HIGH!</div>
+            <form action="/guess" method="POST">
+                <p>Take another guess!<input type="text" name="human_guess" id="human_guess" size="8" maxlength="3"></p>
+                <button type="submit" class="button">Guess</button>
+            </form>
+            {% endif %}
+            {% if exactly == True %}
+            <h3>My number was {{computer_num}}.</h3>
+            <div class="right">
+                CORRECT!
+                <img src="../static/img/dancingbanana.gif" alt="">
+            <form action="/clear">
+                <button type="submit" class="button">Play Again</button>
+            </form>
+            </div>
+            <p>It took you {{num_attempts}} tries to win.</p>
+            {% endif %}
+            {% if greater_than == True and num_attempts > 5 %}
+            <div class="wrong">YOU LOSE!
+                <img src="../static/img/sadbanana.gif" alt="">
+                <form action="/clear">
+                    <button type="submit" class="button">Play Again</button>
+                </form>
+            </div>
+            <h3>My number was {{computer_num}}.</h3>
+            {% endif %}
+        </div>
+    </div>
+</body>
+
+</html>
